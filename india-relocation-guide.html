@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Complete NRI Return Blueprint — Moving Back to India</title>
+  <style>
+    :root {
+      --primary: #1a3c5e;
+      --accent: #e07b39;
+      --gold: #c9962b;
+      --light: #f5f7fa;
+      --text: #1e2d3d;
+      --muted: #5a6a7a;
+      --border: #dde3ea;
+      --green: #2e7d54;
+      --red: #c0392b;
+      --warn: #f39c12;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      background: #fff;
+      color: var(--text);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+    /* ── Cover ── */
+    .cover {
+      background: linear-gradient(135deg, var(--primary) 0%, #0d2238 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 40px 60px;
+    }
+    .cover .tag {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 20px;
+      margin-bottom: 28px;
+    }
+    .cover h1 {
+      font-size: clamp(28px, 5vw, 52px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .cover h1 span { color: var(--accent); }
+    .cover .subtitle {
+      font-size: clamp(14px, 2vw, 20px);
+      color: #a8c4df;
+      max-width: 660px;
+      margin: 0 auto 40px;
+      font-style: italic;
+    }
+    .cover-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+    .cover-stats div { text-align: center; }
+    .cover-stats .num { font-size: 36px; font-weight: 700; color: var(--accent); }
+    .cover-stats .lbl { font-size: 13px; color: #a8c4df; font-family: sans-serif; }
+
+    /* ── Container ── */
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── TOC ── */
+    .toc-section {
+      background: var(--light);
+      border-bottom: 2px solid var(--border);
+      padding: 56px 0;
+    }
+    .toc-section h2 {
+      font-size: 26px;
+      color: var(--primary);
+      margin-bottom: 28px;
+      text-align: center;
+    }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .toc-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: sans-serif;
+      font-size: 14px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .toc-item:hover { border-color: var(--accent); box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+    .toc-item .phase-dot {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── Sections ── */
+    .guide-section { padding: 64px 0; border-bottom: 2px solid var(--border); }
+    .guide-section:last-of-type { border-bottom: none; }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .section-num {
+      width: 52px; height: 52px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .section-header h2 { font-size: clamp(20px, 3vw, 28px); color: var(--primary); }
+    .section-header p { color: var(--muted); font-size: 15px; margin-top: 4px; font-family: sans-serif; }
+
+    /* ── Phase Banner ── */
+    .phase-banner {
+      background: var(--primary);
+      color: #fff;
+      padding: 32px 40px;
+      border-radius: 12px;
+      margin-bottom: 0;
+    }
+    .phase-banner h2 { font-size: 26px; margin-bottom: 6px; }
+    .phase-banner p { color: #a8c4df; font-family: sans-serif; font-size: 15px; }
+
+    /* ── Cards ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+    }
+    .card h3 {
+      font-size: 17px;
+      color: var(--primary);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3 .icon { font-size: 20px; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 24px;
+    }
+
+    /* ── Checklist ── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 7px 0;
+      font-size: 15px;
+      border-bottom: 1px solid #f0f2f4;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .checklist li::before {
+      content: '';
+      width: 18px; height: 18px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .checklist.done li::before {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    /* ── Alert Boxes ── */
+    .alert {
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-family: sans-serif;
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .alert .a-icon { font-size: 20px; flex-shrink: 0; }
+    .alert.warn { background: #fdf6ec; border-left: 4px solid var(--warn); }
+    .alert.danger { background: #fdf0ef; border-left: 4px solid var(--red); }
+    .alert.tip { background: #eef8f3; border-left: 4px solid var(--green); }
+    .alert.info { background: #eef4fb; border-left: 4px solid var(--primary); }
+    .alert strong { display: block; margin-bottom: 4px; }
+
+    /* ── Timeline ── */
+    .timeline { position: relative; padding-left: 32px; margin-top: 24px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 10px; top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-dot {
+      position: absolute;
+      left: -27px; top: 4px;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+    .tl-item h4 { font-size: 15px; color: var(--primary); margin-bottom: 4px; }
+    .tl-item p, .tl-item ul { font-size: 14px; color: var(--muted); font-family: sans-serif; }
+    .tl-item ul { padding-left: 18px; }
+
+    /* ── Table ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: sans-serif;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+    th {
+      background: var(--primary);
+      color: #fff;
+      text-align: left;
+      padding: 10px 14px;
+      font-weight: 600;
+    }
+    td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+    tr:nth-child(even) td { background: var(--light); }
+    td strong { color: var(--primary); }
+
+    /* ── Tags ── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .badge {
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .badge.green { background: #d4edda; color: #155724; }
+    .badge.red { background: #f8d7da; color: #721c24; }
+    .badge.orange { background: #fde8d3; color: #8a3e00; }
+    .badge.blue { background: #d1ecf1; color: #0c5460; }
+    .badge.gray { background: #e9ecef; color: #495057; }
+
+    /* ── Two-col layout ── */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+    /* ── Highlight box ── */
+    .highlight-box {
+      background: linear-gradient(135deg, #f0f6ff 0%, #e8f3ff 100%);
+      border: 1px solid #b8d4f0;
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 24px 0;
+    }
+    .highlight-box h4 { color: var(--primary); margin-bottom: 12px; font-size: 16px; }
+
+    /* ── Decision Matrix ── */
+    .decision { border: 2px solid var(--border); border-radius: 10px; overflow: hidden; margin: 20px 0; }
+    .decision-header { background: var(--primary); color: #fff; padding: 14px 20px; font-weight: 700; font-family: sans-serif; }
+    .decision-body { padding: 20px; }
+    .d-row { display: flex; gap: 16px; margin-bottom: 12px; font-family: sans-serif; font-size: 14px; }
+    .d-label { font-weight: 700; color: var(--accent); width: 80px; flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--primary);
+      color: #a8c4df;
+      text-align: center;
+      padding: 40px 24px;
+      font-family: sans-serif;
+      font-size: 13px;
+    }
+    footer strong { color: #fff; }
+
+    /* ── Print ── */
+    @media print {
+      .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .phase-banner { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════ COVER ═══════════════════════════════════════ -->
+<div class="cover">
+  <div class="tag">Complete NRI Return Blueprint</div>
+  <h1>Moving Back to <span>India</span>:<br/>The Definitive Guide</h1>
+  <p class="subtitle">
+    Every financial, legal, tax, logistical &amp; lifestyle decision you need to make —
+    sequenced, explained, and checked off.
+  </p>
+  <div class="cover-stats">
+    <div><div class="num">12</div><div class="lbl">Major Chapters</div></div>
+    <div><div class="num">200+</div><div class="lbl">Action Items</div></div>
+    <div><div class="num">3</div><div class="lbl">Planning Phases</div></div>
+    <div><div class="num">US→IN</div><div class="lbl">Focus Route</div></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════ TOC ═══════════════════════════════════════ -->
+<div class="toc-section">
+  <div class="container">
+    <h2>Table of Contents</h2>
+    <div class="toc-grid">
+      <a href="#phase1" class="toc-item"><div class="phase-dot">1</div>24–12 Months Before: Strategic Planning</a>
+      <a href="#phase2" class="toc-item"><div class="phase-dot">2</div>12–3 Months Before: Active Preparation</a>
+      <a href="#phase3" class="toc-item"><div class="phase-dot">3</div>Final 3 Months &amp; Move Day</a>
+      <a href="#tax-status" class="toc-item"><div class="phase-dot">4</div>NRI → RNOR → ROR Tax Status</a>
+      <a href="#us-finance" class="toc-item"><div class="phase-dot">5</div>US Financial Assets</a>
+      <a href="#retirement" class="toc-item"><div class="phase-dot">6</div>401(k), IRA &amp; Retirement Accounts</a>
+      <a href="#us-home" class="toc-item"><div class="phase-dot">7</div>US Home: Sell, Rent, or Hold?</a>
+      <a href="#india-finance" class="toc-item"><div class="phase-dot">8</div>India Banking &amp; Investments</a>
+      <a href="#legal-docs" class="toc-item"><div class="phase-dot">9</div>Legal, Citizenship &amp; Documents</a>
+      <a href="#healthcare" class="toc-item"><div class="phase-dot">10</div>Healthcare &amp; Insurance</a>
+      <a href="#family" class="toc-item"><div class="phase-dot">11</div>Family, Education &amp; Career</a>
+      <a href="#logistics" class="toc-item"><div class="phase-dot">12</div>Logistics, Shipping &amp; Life Setup</div></a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     PHASE 1 — 24–12 MONTHS OUT
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="phase1">
+  <div class="container">
+    <div class="phase-banner">
+      <h2>Phase 1 — Strategic Planning (24–12 Months Before Move)</h2>
+      <p>This phase is about decisions and frameworks, not yet execution. Get clarity before you act.</p>
+    </div>
+
+    <br/>
+
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <div>
+        <h2>Define Your Return Framework</h2>
+        <p>Clarity on the "why" determines every downstream financial and logistical decision.</p>
+      </div>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <h3><span class="icon">🎯</span> Decide Your Return Date Range</h3>
+        <ul class="checklist">
+          <li>Lock a 3-month target window (e.g., April–June 2026)</li>
+          <li>Align with US tax year end (Dec 31) for cleaner filing</li>
+          <li>Factor in school year for children</li>
+          <li>Factor in equity vesting cliffs at employer</li>
+          <li>Check any ESPP purchase period end dates</li>
+          <li>Align with lease expiration or mortgage refinance dates</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon">🏙️</span> Choose Your Base in India</h3>
+        <ul class="checklist">
+          <li>Identify city (Bengaluru, Pune, Hyderabad, Mumbai, NCR, tier-2?)</li>
+          <li>Research neighborhoods — proximity to schools, hospitals, family</li>
+          <li>Research rental vs. purchase pricing in target areas</li>
+          <li>Visit India at least once during this phase for reconnaissance</li>
+          <li>Assess air quality, infrastructure, commute patterns</li>
+          <li>Evaluate proximity to aging parents if applicable</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert info">
+      <span class="a-icon">ℹ️</span>
+      <div><strong>Key Insight</strong>The city you choose determines school options, job market, cost of living, and real estate ROI. Bengaluru and Hyderabad tend to offer the best tech job markets; Pune offers a balance of cost and quality of life.</div>
+    </div>
+
+    <div class="section-header" style="margin-top:40px;">
+      <div class="section-num">2</div>
+      <div>
+        <h2>Understand Your Tax Residency Timeline</h2>
+        <p>The NRI → RNOR → ROR transition governs when and how India can tax your global income.</p>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Status</th>
+        <th>Who You Are</th>
+        <th>India Taxes</th>
+        <th>Duration</th>
+      </tr>
+      <tr>
+        <td><strong>NRI</strong></td>
+        <td>Stay &lt;182 days in India in a FY</td>
+        <td>Only India-sourced income taxed</td>
+        <td>Until you move back</td>
+      </tr>
+      <tr>
+        <td><strong>RNOR</strong></td>
+        <td>Returned but not "ordinarily resident" yet</td>
+        <td>India income + income received in India; foreign income generally exempt</td>
+        <td>Up to 2–3 years after return</td>
+      </tr>
+      <tr>
+        <td><strong>ROR</strong></td>
+        <td>Ordinarily resident (2/10 yrs rule met)</td>
+        <td>Global income taxed by India</td>
+        <td>Ongoing thereafter</td>
+      </tr>
+    </table>
+
+    <div class="alert warn">
+      <span class="a-icon">⚠️</span>
+      <div><strong>Critical Window</strong> The RNOR period (typically 2 years) is your golden window to realize foreign income, sell US assets, and withdraw from US retirement accounts at potentially lower tax cost — <em>before</em> India's global income taxation kicks in. Plan major US asset events within this window.</div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>RNOR Eligibility Rule (simplified)</h4>
+      <p style="font-family:sans-serif;font-size:14px;">You qualify as RNOR if you have been a non-resident in 9 out of 10 preceding years, OR your stay in India during the 7 preceding years was 729 days or less. Most returning NRIs who lived in the US for 7+ years automatically get the RNOR benefit for 2 fiscal years.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     PHASE 2 — 12–3 MONTHS OUT
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="phase2">
+  <div class="container">
+    <div class="phase-banner">
+      <h2>Phase 2 — Active Preparation (12–3 Months Before Move)</h2>
+      <p>Execution phase. Open accounts, make financial moves, handle paperwork, and plan logistics.</p>
+    </div>
+
+    <br/>
+
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <div>
+        <h2>Build Your Pre-Move Financial Checklist</h2>
+        <p>Run through every US financial product you hold and decide its fate before you leave.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏦</span> US Bank Accounts</h3>
+      <ul class="checklist">
+        <li>Keep at least one US checking account active post-move (Chase, Bank of America, or credit union)</li>
+        <li>Open a Charles Schwab International checking — zero foreign transaction fees, ATM fee refunds worldwide</li>
+        <li>Keep a savings account for US emergency fund / repatriation buffer</li>
+        <li>Update mailing address to a trusted US contact or virtual mailbox service (Earth Class Mail, PostScan Mail)</li>
+        <li>Set up e-statements for all US accounts</li>
+        <li>Remove safe deposit box contents</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">💳</span> US Credit Cards — Do NOT Close All of Them</h3>
+      <ul class="checklist">
+        <li>Keep 1–2 no-foreign-transaction-fee cards active (Chase Sapphire, Capital One Venture, Schwab Visa)</li>
+        <li>Request credit limit increases before departure (easier with US income history)</li>
+        <li>Set autopay for US card minimums from your US bank account</li>
+        <li>Close cards with annual fees you won't use</li>
+        <li>Freeze your credit (Experian, Equifax, TransUnion) to prevent identity theft after departure</li>
+        <li>Download credit reports from annualcreditreport.com before leaving</li>
+        <li>Note: US credit score does not transfer to India</li>
+      </ul>
+    </div>
+
+    <div class="alert tip">
+      <span class="a-icon">✅</span>
+      <div><strong>Pro Tip</strong> Keeping an active US credit card with no foreign transaction fees is invaluable post-return — for US subscriptions, Amazon.com purchases, and as a backup payment method. Closing all US credit history is a common mistake.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     PHASE 3 — FINAL 3 MONTHS + MOVE DAY
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="phase3">
+  <div class="container">
+    <div class="phase-banner">
+      <h2>Phase 3 — Final 3 Months &amp; Move Day</h2>
+      <p>Confirm, notify, close, pack, and fly. Execute the plan you've built.</p>
+    </div>
+
+    <br/>
+    <div class="section-header">
+      <div class="section-num">3a</div>
+      <div>
+        <h2>90-Day Countdown Checklist</h2>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>90 Days Out</h4>
+        <ul>
+          <li>Give notice at work (check employment contract for required notice period)</li>
+          <li>Initiate H1-B / visa revocation if on employer-sponsored visa</li>
+          <li>Book international movers — get 3 quotes; confirm air vs. sea freight</li>
+          <li>Notify landlord of move-out date</li>
+          <li>Begin decluttering — sell on Facebook Marketplace, OfferUp, Craigslist</li>
+          <li>Obtain notarized copies of all key documents</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>60 Days Out</h4>
+        <ul>
+          <li>Submit USPS mail forwarding to a US address (not India — use virtual mailbox)</li>
+          <li>Update address with IRS (Form 8822)</li>
+          <li>Notify Social Security Administration of new address</li>
+          <li>Notify all financial institutions of upcoming address change</li>
+          <li>Transfer/sell vehicles — research if worthwhile to ship (rarely is)</li>
+          <li>Begin India housing search seriously — finalize rental or purchase</li>
+          <li>Sort items: ship, store, donate, sell, carry</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>30 Days Out</h4>
+        <ul>
+          <li>Cancel US subscriptions: gym, streaming, etc. (keep Netflix if available in India)</li>
+          <li>Transfer US phone number to Google Voice ($20 one-time) to keep it active</li>
+          <li>Back up all digital data — photos, docs, iCloud, Google</li>
+          <li>Confirm movers, get packing materials</li>
+          <li>File USPS change of address, notify key contacts</li>
+          <li>Renew Indian passport if expiring within 2 years</li>
+          <li>Get medical records, vaccination records, prescription history from doctors</li>
+          <li>Fill 3–6 month supply of critical medications</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>2 Weeks Out</h4>
+        <ul>
+          <li>Confirm flights — book business class one-way if budget allows (stress reduction)</li>
+          <li>Arrange airport pickup in India</li>
+          <li>Close utility accounts (electric, gas, internet, water)</li>
+          <li>Return cable boxes, modems, rented equipment</li>
+          <li>Return library books, rental items</li>
+          <li>Do a final house walkthrough and photograph everything for deposit return</li>
+          <li>Shred sensitive US documents you won't need</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <h4>Move Day</h4>
+        <ul>
+          <li>Carry-on: passports, OCI card, all original documents, medications, laptop, hard drives</li>
+          <li>Keep $2,000–$5,000 USD in cash for initial India expenses</li>
+          <li>Carry ₹5,000–₹10,000 cash for immediate India needs</li>
+          <li>Surrender US apartment keys, get written receipt</li>
+          <li>Take meter readings, photograph property condition</li>
+          <li>Disable US SIM, activate India eSIM (Airtel or Jio) or carry India SIM</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 4 — TAX STATUS
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="tax-status">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <div>
+        <h2>Tax Planning: US &amp; India</h2>
+        <p>Your most complex challenge — requires sequencing decisions across two tax systems simultaneously.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🇺🇸</span> US Taxes — The Exit Year</h3>
+      <ul class="checklist">
+        <li>You remain a US tax filer for the year you leave (January 1 to December 31)</li>
+        <li>File Form 1040 as a "dual-status alien" in the year of departure if on a visa; as US citizen/GC holder if applicable</li>
+        <li>If a Green Card holder: consider timing of abandonment — affects exit tax if "long-term resident" (8 of 15 years)</li>
+        <li>Green Card abandonment: file Form I-407 + file Form 8854 (expatriation return) if net worth &gt;$2M or avg tax liability &gt;$201,000 (2025 threshold)</li>
+        <li>US citizens/GC holders: you owe US taxes on worldwide income indefinitely until citizenship renounced or GC abandoned</li>
+        <li>File FBAR (FinCEN 114) annually if foreign accounts exceed $10,000 at any point in year</li>
+        <li>File Form 8938 (FATCA) if foreign assets exceed $50,000 (single/MFS) or $100,000 (MFJ)</li>
+        <li>File Form 1116 for Foreign Tax Credit to avoid double taxation</li>
+        <li>Hire a US CPA specializing in expatriate taxes — do NOT use standard TurboTax</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🇮🇳</span> India Taxes — Returning Resident</h3>
+      <ul class="checklist">
+        <li>File Indian ITR from the year you become tax resident (stay &gt;182 days in FY)</li>
+        <li>During RNOR period: disclose foreign assets in Schedule FA of ITR</li>
+        <li>Convert NRE accounts to RFC (Resident Foreign Currency) accounts — maintains tax-free interest temporarily</li>
+        <li>NRO account interest is taxable in India at slab rate from day one of residency</li>
+        <li>Engage a CA (Chartered Accountant) in India with NRI return experience</li>
+        <li>Register with the local Income Tax ward after return</li>
+        <li>Update PAN card with new residential status</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🤝</span> India-US Double Tax Avoidance Agreement (DTAA)</h3>
+      <ul class="checklist">
+        <li>India and US have a tax treaty (DTAA) — use it to avoid paying tax twice on the same income</li>
+        <li>US Social Security: taxable only in the US under the treaty — India cannot tax it</li>
+        <li>Dividends: US may withhold 15–25%; claim credit in India via DTAA</li>
+        <li>Capital gains on US stocks: generally taxable in US; claim credit in India</li>
+        <li>US pension/401(k) distributions: taxable in US; credit available in India</li>
+        <li>Consult both a US CPA and Indian CA annually during transition years</li>
+        <li>File both US and India returns — even if no India tax is owed, filing protects you</li>
+      </ul>
+    </div>
+
+    <div class="alert danger">
+      <span class="a-icon">🚨</span>
+      <div><strong>FBAR Penalties Are Severe</strong> Non-willful FBAR violations: up to $14,489 per violation per year. Willful violations: up to $144,886 or 50% of account balance, whichever is higher, plus criminal prosecution. File every year without exception.</div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Tax Professional Team You Need</h4>
+      <p style="font-family:sans-serif;font-size:14px;">
+        <strong>US Side:</strong> An enrolled agent or CPA with "expatriate taxation" specialty. Look for firms like Greenback Tax Services, Bright!Tax, H&amp;R Block Expat, or a local CPA with international practice.<br/><br/>
+        <strong>India Side:</strong> A CA registered with ICAI who has worked with "returning NRIs" — ideally in your city. They should understand Schedule FA, RFC accounts, and DTAA credit claims.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 5 — US FINANCIAL ASSETS
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="us-finance">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <div>
+        <h2>US Financial Assets — Stocks, Brokerage &amp; Investments</h2>
+        <p>What to do with your taxable US investment accounts when you move.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3><span class="icon">📈</span> US Brokerage Accounts</h3>
+        <ul class="checklist">
+          <li>You CAN keep US brokerage accounts as an NRI / non-resident</li>
+          <li>Fidelity and Schwab are NRI-friendly; Robinhood and Webull typically close accounts</li>
+          <li>Update your address to your India address before departure</li>
+          <li>Notify your broker of change in residency status</li>
+          <li>US-source dividends: subject to 30% withholding tax (or 15–25% under DTAA) — ensure broker has W-8BEN on file</li>
+          <li>Capital gains on sale of US stocks: taxed in US (long-term 0/15/20%); claimable as DTAA credit in India</li>
+          <li>Vanguard, Fidelity mutual funds may restrict purchase for non-residents; you can usually hold existing positions</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon">🏢</span> RSUs, ESPPs &amp; Stock Options</h3>
+        <ul class="checklist">
+          <li>Accelerate RSU vesting strategy — consider your last year of US residency for large vest events</li>
+          <li>ESPP: purchase discount is ordinary income; appreciate before departure if possible</li>
+          <li>ISO options: understand AMT implications of exercising before departure</li>
+          <li>NSO options: spread at exercise is W-2 income to your US employer</li>
+          <li>After departure, RSU/option income sourced to India may be taxable in India — complex allocation rules apply</li>
+          <li>Get a tax opinion on any large unvested grant before you leave</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🌍</span> Repatriating Money from US to India</h3>
+      <ul class="checklist">
+        <li>Use Wise (formerly TransferWise), Remitly, or direct wire for large transfers</li>
+        <li>For large amounts (&gt;$50,000), wire transfer through bank is often better rate</li>
+        <li>No limit on how much you can transfer from US to India as a US resident/citizen — but source must be documented</li>
+        <li>India allows receipt of foreign remittance without RBI approval up to $1M per year for RNOR/ROR individuals</li>
+        <li>Keep wire transfer records (purpose: repatriation of savings / sale proceeds) — you'll need these for India bank documentation</li>
+        <li>Funds in NRE accounts are freely repatriable; NRO funds have annual $1M repatriation cap (with CA certificate)</li>
+        <li>Do NOT carry more than $10,000 USD in cash across borders without customs declaration</li>
+      </ul>
+    </div>
+
+    <div class="alert info">
+      <span class="a-icon">ℹ️</span>
+      <div><strong>Best FX Rate Tools</strong> Compare rates at Wise.com, Remitly, and your bank's wire rate. Wise typically beats banks by 1–3%. On a $100,000 transfer, that's $1,000–$3,000 in savings.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 6 — RETIREMENT ACCOUNTS
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="retirement">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <div>
+        <h2>401(k), IRA, Roth IRA — Retirement Account Strategy</h2>
+        <p>Potentially your largest US asset. Timing withdrawals correctly can save tens of thousands in taxes.</p>
+      </div>
+    </div>
+
+    <table>
+      <tr>
+        <th>Account Type</th>
+        <th>Key Consideration</th>
+        <th>Recommended Action</th>
+        <th>Watch Out For</th>
+      </tr>
+      <tr>
+        <td><strong>Traditional 401(k)</strong></td>
+        <td>Pre-tax; all withdrawals are ordinary income</td>
+        <td>Leave in place or roll to Traditional IRA; do NOT cash out</td>
+        <td>10% early withdrawal penalty if under 59½; mandatory 20% withholding</td>
+      </tr>
+      <tr>
+        <td><strong>Roth 401(k)</strong></td>
+        <td>After-tax contributions; qualified withdrawals tax-free</td>
+        <td>Roll to Roth IRA to avoid RMDs</td>
+        <td>5-year rule on Roth 401(k) earnings</td>
+      </tr>
+      <tr>
+        <td><strong>Traditional IRA</strong></td>
+        <td>Pre-tax; withdrawals are ordinary income</td>
+        <td>Consider Roth conversion ladder during RNOR window if income is low</td>
+        <td>India may tax these distributions once you're ROR — use DTAA credit</td>
+      </tr>
+      <tr>
+        <td><strong>Roth IRA</strong></td>
+        <td>After-tax; contributions can be withdrawn anytime tax-free</td>
+        <td>Keep and let grow — excellent long-term asset</td>
+        <td>India does NOT recognize Roth IRA tax-free status — may tax earnings as ROR</td>
+      </tr>
+      <tr>
+        <td><strong>SEP-IRA / Solo 401(k)</strong></td>
+        <td>Self-employment accounts</td>
+        <td>Roll to Traditional IRA; close the plan properly</td>
+        <td>Outstanding contributions from current year must be settled</td>
+      </tr>
+    </table>
+
+    <div class="card">
+      <h3><span class="icon">🔑</span> The Roth Conversion Ladder — Your Most Powerful Tool</h3>
+      <p style="font-size:14px;font-family:sans-serif;margin-bottom:12px;">If you have a Traditional IRA/401(k) and plan to retire in India, consider converting to Roth IRA <em>during your RNOR years</em> when:</p>
+      <ul class="checklist">
+        <li>Your US income is low (you've stopped working in US)</li>
+        <li>India doesn't yet tax your foreign income (RNOR status)</li>
+        <li>You can convert at the 0% or 10% US bracket</li>
+        <li>Roth conversions up to the standard deduction (~$15,000 single) are completely US tax-free</li>
+        <li>Convert up to 12% bracket ($47,150 single / $94,300 MFJ in 2025) for minimal tax cost</li>
+        <li>Allow 5-year seasoning before accessing converted amounts penalty-free</li>
+      </ul>
+    </div>
+
+    <div class="alert warn">
+      <span class="a-icon">⚠️</span>
+      <div><strong>401(k) Loan Warning</strong> If you have an outstanding 401(k) loan and leave your employer, the loan becomes due within 60–90 days. If unpaid, it's treated as a taxable distribution with the 10% penalty. Repay or roll over before leaving your job.</div>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Social Security — Don't Overlook This</h4>
+      <p style="font-family:sans-serif;font-size:14px;">
+        If you have 40 qualifying credits (10 years of US work), you are eligible for US Social Security benefits. You can receive Social Security while living in India. Benefits are taxable in the US only (under DTAA Article 20). Create an account at ssa.gov, verify your earnings record, and calculate your projected benefit. Even if decades away, this is a meaningful asset — do not "start" it prematurely.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 7 — US HOME
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="us-home">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <div>
+        <h2>Your US Home: Sell, Rent, or Hold?</h2>
+        <p>The largest single financial decision for most returning NRIs.</p>
+      </div>
+    </div>
+
+    <div class="decision">
+      <div class="decision-header">Decision Framework: What to Do With Your US Home</div>
+      <div class="decision-body">
+        <div class="d-row">
+          <div class="d-label">SELL</div>
+          <div>Best if: you want clean break, need capital for India, uncertain about return to US, appreciation has been significant. <strong>Timing:</strong> sell while still US resident to claim the $250K/$500K primary residence capital gains exclusion (Section 121) — you must have lived in it 2 of the last 5 years.</div>
+        </div>
+        <div class="d-row">
+          <div class="d-label">RENT</div>
+          <div>Best if: strong rental market, you have a trusted property manager, mortgage is low relative to rent, you might return to US. <strong>Caution:</strong> rental income is US taxable; you must report it. Also complicates the Section 121 exclusion if you sell later (depreciation recapture applies).</div>
+        </div>
+        <div class="d-row">
+          <div class="d-label">HOLD</div>
+          <div>Best if: no mortgage, property is appreciating, no plan to access equity. Rare scenario — carrying costs (HOA, property tax, insurance, maintenance) erode returns if vacant.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">💰</span> Section 121 Exclusion — The Most Valuable Rule</h3>
+      <ul class="checklist">
+        <li>Exclude up to $250,000 (single) or $500,000 (married filing jointly) of capital gain from US taxes</li>
+        <li>Must have used as primary residence for 2 of the last 5 years before sale</li>
+        <li>You do NOT have to be a US resident at time of sale — just meet the use test</li>
+        <li>Sell before you've been away 3+ years or you lose the exclusion</li>
+        <li>File Form 8949 and Schedule D; mark the exclusion on the return</li>
+        <li>If married, both spouses must meet the use test to claim the full $500K</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏠</span> If You Rent Out Your US Home</h3>
+      <ul class="checklist">
+        <li>Hire a licensed property manager (typically 8–12% of monthly rent)</li>
+        <li>Set up a separate US bank account for rental income and expenses</li>
+        <li>Deduct: mortgage interest, property taxes, insurance, depreciation, PM fees, repairs</li>
+        <li>Depreciation recapture taxed at 25% when you eventually sell — factor this in</li>
+        <li>FIRPTA: when a non-resident alien sells US real estate, buyer must withhold 15% of sale price as federal tax — plan for this</li>
+        <li>Schedule E filing required annually</li>
+        <li>State taxes on rental income also apply (California, New York are aggressive)</li>
+        <li>Consider forming an LLC — but consult a CPA first on tax implications</li>
+      </ul>
+    </div>
+
+    <div class="alert danger">
+      <span class="a-icon">🚨</span>
+      <div><strong>FIRPTA Trap</strong> If you sell US property as a non-resident alien, the buyer is required to withhold 15% of the gross sale price (not profit) as a deposit toward your federal tax. This can create a significant cash flow issue at closing. Consult a US real estate attorney before listing.</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 8 — INDIA BANKING & INVESTMENTS
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="india-finance">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">8</div>
+      <div>
+        <h2>India Banking, Accounts &amp; Investments</h2>
+        <p>Set up your Indian financial life correctly from day one.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏦</span> Bank Account Conversion — NRE/NRO → Resident</h3>
+      <ul class="checklist">
+        <li>Once you become a tax resident, NRE accounts MUST be converted — you cannot legally maintain NRE status while resident</li>
+        <li>Convert NRE accounts to RFC (Resident Foreign Currency) accounts — maintains foreign currency denomination, interest stays tax-free during RNOR period</li>
+        <li>Convert NRO accounts to regular resident savings accounts</li>
+        <li>Notify your Indian bank within a reasonable time of becoming resident (most banks ask within 30 days)</li>
+        <li>Open a resident savings account with HDFC, ICICI, SBI, Axis, Kotak, or Yes Bank</li>
+        <li>Update KYC documents (new address proof, updated PAN status)</li>
+        <li>Get a new debit card with international transaction capability (Visa/Mastercard)</li>
+        <li>Set up UPI (Unified Payments Interface) — it's how India pays for everything now</li>
+        <li>Link Aadhaar to all bank accounts (mandatory)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📊</span> India Investment Options</h3>
+      <div class="card-grid" style="margin-top:0;">
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">Equity Mutual Funds</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">Start SIPs immediately. Index funds (Nifty 50, Nifty Next 50, Nifty Midcap 150). LTCG &gt;1 year at 12.5%; STCG at 20%.</p>
+          <div class="tag-row"><span class="badge green">Recommended</span><span class="badge blue">Low Cost</span></div>
+        </div>
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">PPF (Public Provident Fund)</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">NRIs cannot open new PPF; existing accounts can continue until maturity. Returns tax-free. 15-year lock-in.</p>
+          <div class="tag-row"><span class="badge orange">Existing Only</span></div>
+        </div>
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">NPS (National Pension System)</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">Open Tier I (deduction under 80C/80CCD) and Tier II. Excellent long-term tool for retirement corpus.</p>
+          <div class="tag-row"><span class="badge green">Recommended</span></div>
+        </div>
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">Fixed Deposits</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">FD rates 6.5–8% in India (2025). TDS applies. Good for short-term parking of funds.</p>
+          <div class="tag-row"><span class="badge blue">Stable</span></div>
+        </div>
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">Direct Stocks (BSE/NSE)</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">Open a demat account with Zerodha, Groww, or ICICI Direct. Easy, low-cost access to Indian equities.</p>
+          <div class="tag-row"><span class="badge blue">Active</span></div>
+        </div>
+        <div>
+          <strong style="color:var(--primary);font-size:14px;">Indian Real Estate</strong>
+          <p style="font-family:sans-serif;font-size:13px;color:var(--muted);margin-top:6px;">Rental yield 2–4%; appreciation varies. Wait 1–2 years before buying to understand the local market properly.</p>
+          <div class="tag-row"><span class="badge orange">Wait &amp; Watch</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="alert warn">
+      <span class="a-icon">⚠️</span>
+      <div><strong>US Mutual Fund Rule for India Residents</strong> Once you become an Indian resident (ROR), investing in US-domiciled mutual funds or ETFs via a US brokerage may constitute a PFIC (Passive Foreign Investment Company) for US tax purposes — creating nightmarish reporting requirements. Get tax advice before continuing to buy US ETFs from India.</div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">💸</span> India Real Estate — If You Want to Buy</h3>
+      <ul class="checklist">
+        <li>Register property in your name (and spouse if applicable)</li>
+        <li>Verify RERA registration of the project (rerait.gov.in)</li>
+        <li>Check encumbrance certificate, clear title, and approved building plan</li>
+        <li>Stamp duty: 5–7% (varies by state); registration fee: 1%</li>
+        <li>Home loan: you can get one as a resident Indian — credit history starts fresh</li>
+        <li>NRI-funded purchase: bring remittance route documentation for any home loan repayment from abroad</li>
+        <li>Short-list areas, hire a local lawyer for due diligence — budget ₹15,000–₹50,000</li>
+        <li>Avoid sub-registrar office queues — hire a document writer (deed writer)</li>
+        <li>Capital gains on sale: LTCG (&gt;2 years) at 12.5% without indexation (post July 2024 budget)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 9 — LEGAL, CITIZENSHIP & DOCUMENTS
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="legal-docs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">9</div>
+      <div>
+        <h2>Legal, Citizenship &amp; Documents</h2>
+        <p>The paper trail that makes everything else work. Get this right before you leave.</p>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="card">
+        <h3><span class="icon">🛂</span> OCI Card (Overseas Citizen of India)</h3>
+        <ul class="checklist">
+          <li>If you are a US citizen of Indian origin — apply for OCI immediately if you don't have one</li>
+          <li>OCI gives you lifetime visa to India, parity with NRIs for property, business, employment</li>
+          <li>Apply online at ociservices.gov.in + visit nearest Indian consulate</li>
+          <li>Processing time: 8–16 weeks; plan well ahead</li>
+          <li>OCI holders CANNOT vote in India, hold certain government jobs, or buy agricultural land</li>
+          <li>OCI card must be renewed when you renew your US passport (mismatched passport numbers need update)</li>
+          <li>Children of Indian-origin parents can get OCI too</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3><span class="icon">🛂</span> US Citizenship / Green Card</h3>
+        <ul class="checklist">
+          <li>US citizens: you maintain citizenship — you just live abroad; renew US passport before it expires</li>
+          <li>Green Card holders: you WILL lose GC if you live outside US without a Reentry Permit</li>
+          <li>Get a Reentry Permit (Form I-131) before departure — allows up to 2 years abroad without losing GC</li>
+          <li>After GC expires or if you decide to abandon: file Form I-407 voluntarily at a US consulate</li>
+          <li>Consider timing of GC abandonment relative to the exit tax threshold (net worth &gt;$2M)</li>
+          <li>Dual citizenship: India does NOT allow dual citizenship — if Indian-origin US citizen, you travel to India on US passport + OCI card</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📄</span> Indian Documents to Renew/Update</h3>
+      <ul class="checklist">
+        <li><strong>Indian Passport:</strong> renew if expiring within 2 years; go to Indian consulate in US or renew in India post-arrival</li>
+        <li><strong>PAN Card:</strong> verify your PAN is linked to Aadhaar; update residential status from NRI to Resident</li>
+        <li><strong>Aadhaar Card:</strong> must have if you lived in India for 182+ days. Update address post-arrival via Aadhaar portal or UIDAI center</li>
+        <li><strong>Voter ID:</strong> register at your new address after 6 months of residency (Form 6 on voterportal.eci.gov.in)</li>
+        <li><strong>Indian Driver's License:</strong> if expired, apply for fresh one at local RTO</li>
+        <li><strong>International Driving Permit:</strong> get one in US before leaving — valid 1 year; useful in India temporarily</li>
+        <li><strong>Professional Certificates:</strong> get apostille on US degrees, professional licenses for India use</li>
+        <li><strong>Marriage Certificate:</strong> get apostille if married in US; needed for India property registration</li>
+        <li><strong>Birth Certificates:</strong> apostille US-born children's birth certificates</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">⚖️</span> Power of Attorney — Set One Up for Both Countries</h3>
+      <ul class="checklist">
+        <li>US POA: grant a trusted US contact authority to manage US financial matters, sign documents, access safe deposit boxes</li>
+        <li>India POA: grant a trusted India contact authority before you arrive — for property, banking, family matters</li>
+        <li>Notarize US POA and get apostille if it needs to be used in India</li>
+        <li>India POA: register with sub-registrar if related to property transactions</li>
+        <li>Review and revoke POA if circumstances change</li>
+        <li>Create/update your US will before departure; create an Indian will post-arrival</li>
+        <li>Indian succession laws differ — consult an Indian lawyer on estate planning</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 10 — HEALTHCARE & INSURANCE
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="healthcare">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">10</div>
+      <div>
+        <h2>Healthcare &amp; Insurance</h2>
+        <p>Health coverage gaps during transition can be financially catastrophic. Plan carefully.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏥</span> US Health Insurance — Transition Out</h3>
+      <ul class="checklist">
+        <li>COBRA: continue employer plan for 18–36 months at full cost — consider for short overlap period only; expensive</li>
+        <li>ACA Marketplace: if you have US-sourced income post-departure, you may still qualify</li>
+        <li>Travel insurance: get a 30-90 day international policy to cover the gap during travel and initial India setup</li>
+        <li>Cancel US health insurance on your last covered day — do not pay for months you're in India</li>
+        <li>Get maximum healthcare done before you leave: full physical, dental cleaning, eye exam, elective procedures</li>
+        <li>Request copies of all medical records, vaccination history, specialist reports</li>
+        <li>Fill prescriptions for 3–6 months before departure for chronic medications</li>
+        <li>Verify which medications are available in India and under what brand names</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏥</span> India Health Insurance — Set Up Immediately</h3>
+      <ul class="checklist">
+        <li>Purchase comprehensive health insurance the day you land — do not have a gap</li>
+        <li>Recommended providers: Star Health, HDFC ERGO, Niva Bupa (Bupa India), ICICI Lombard</li>
+        <li>Get a "Super Top-Up" plan in addition to a base plan — far more cost-effective for large claims</li>
+        <li>Recommended coverage: ₹25–₹50 lakhs base cover minimum for a family</li>
+        <li>Declare all pre-existing conditions honestly — non-disclosure can void a claim</li>
+        <li>Pre-existing conditions: waiting period 2–4 years typically; plan accordingly</li>
+        <li>Senior citizen coverage for parents: purchase separately, ideally before they turn 60</li>
+        <li>Add critical illness rider for cancer, heart attack, stroke</li>
+        <li>Employer health insurance (if joining Indian company): supplement with personal policy regardless</li>
+        <li>Corporate health insurance often inadequate — personal policy is essential backup</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🛡️</span> Other India Insurance</h3>
+      <ul class="checklist">
+        <li><strong>Term Life Insurance:</strong> buy online immediately — significantly cheaper in India than US. ₹1–₹2 crore coverage costs ~₹10,000–₹20,000/year for a 35-year-old. Compare at PolicyBazaar.com</li>
+        <li><strong>Motor Insurance:</strong> mandatory third-party liability + get comprehensive. Compare at Acko, ICICI Lombard</li>
+        <li><strong>Home Insurance:</strong> often overlooked — insure structure and contents. Available with most general insurers</li>
+        <li><strong>Personal Accident Insurance:</strong> inexpensive, high-value coverage</li>
+        <li>Cancel US auto and home insurance after vehicle/property transfer</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      <h4>Finding Quality Healthcare in India</h4>
+      <p style="font-family:sans-serif;font-size:14px;">
+        India has world-class private hospitals in major cities: Apollo, Fortis, Manipal, Narayana Health, Max, Kokilaben, Medanta. Research your city's top hospitals before arrival. Set up family doctor (general physician) appointment within first 30 days. Register at a hospital for "health check-up packages" — comprehensive annual screenings are very affordable (₹3,000–₹8,000).
+      </p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 11 — FAMILY, EDUCATION & CAREER
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="family">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">11</div>
+      <div>
+        <h2>Family, Education &amp; Career</h2>
+        <p>The human side of the return — often the most emotionally complex.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🎓</span> Children's Education</h3>
+      <ul class="checklist">
+        <li>Research school options: International (IB/IGCSE), CBSE, ICSE, or state board</li>
+        <li>International schools: best continuity from US education; costly (₹3–₹10 lakhs/year)</li>
+        <li>CBSE elite schools: strong academics; adjust for different pedagogy</li>
+        <li>Apply 12–18 months ahead for reputable schools — waitlists are long</li>
+        <li>Understand Indian academic calendar: June–April (vs. Sept–June in US)</li>
+        <li>Get US school transcripts, report cards, test scores apostille-ready</li>
+        <li>Children born in US: they are US citizens — maintain their US passports</li>
+        <li>US-born children may experience cultural adjustment — plan for counseling if needed</li>
+        <li>Indian extracurriculars: cricket, classical music, dance, chess — great for integration</li>
+        <li>If children are in high school: carefully time return to minimize disruption to college application process</li>
+        <li>US GPA/SAT/ACT scores: useful for Indian university admissions (especially management programs)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">💼</span> Career &amp; Employment in India</h3>
+      <ul class="checklist">
+        <li>Start India job search 6 months before departure — LinkedIn India is very active</li>
+        <li>Update LinkedIn with "Relocating to [City] in [Month/Year]" in headline</li>
+        <li>Network with former colleagues who moved back — the "return NRI" community is valuable</li>
+        <li>Salary expectations: Indian tech salaries are 20–30% of US equivalents in INR terms, but cost of living is 3–5x lower</li>
+        <li>Negotiate aggressively — your US experience commands a premium</li>
+        <li>Target: MNCs with India offices, India unicorns, consulting firms, senior leadership roles</li>
+        <li>If starting a business: understand GST registration, company incorporation (Pvt. Ltd. via MCA21), MSME registration</li>
+        <li>Freelancing from India for US clients: legal; income is foreign exchange earnings; report as foreign income</li>
+        <li>STPI (Software Technology Parks of India) registration: optional benefit for IT exporters</li>
+        <li>Provident Fund (PF/EPF): enroll immediately upon joining Indian employer — 12% employer match</li>
+        <li>Gratuity: 15 days per year of service after 5 years — know your entitlement</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">👨‍👩‍👧</span> Spouse &amp; Partner Considerations</h3>
+      <ul class="checklist">
+        <li>Non-Indian spouse: they may enter on OCI (if eligible), regular visa, or need to apply for a long-stay visa</li>
+        <li>Non-Indian spouse OCI: eligible if married to an Indian citizen for 3+ years</li>
+        <li>Career transition for spouse: most challenging aspect — plan extensively</li>
+        <li>Remote work for foreign spouse: often the best solution; check employer's policy on international remote work</li>
+        <li>Driving in India: steep learning curve for foreign spouse; hire a driver initially</li>
+        <li>Cultural adjustment: consider short India trips pre-move for partner to build confidence</li>
+        <li>Social network: expat/returnee communities (Facebook groups, Internations, ASINDIA) are helpful</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">👴</span> Caring for Aging Parents</h3>
+      <ul class="checklist">
+        <li>One of the most common reasons for returning — plan elder care logistics in detail</li>
+        <li>Assess parents' health, mobility, cognitive status — hire a geriatrician for assessment</li>
+        <li>Research assisted living facilities in your city (if needed later)</li>
+        <li>Senior citizen health insurance: buy before parents turn 60–65 to avoid exclusions</li>
+        <li>Set up home nursing/caretaker if needed — agencies like Care24, Portea are available</li>
+        <li>Emergency contacts, hospital empanelment, ambulance services in place</li>
+        <li>Consider housing near or with parents; assess private vs. shared living preferences</li>
+        <li>Legal: create a will for parents; set up financial POA while they're healthy</li>
+        <li>Estate planning: understand Indian inheritance laws (Hindu Succession Act, etc.)</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════════════════════════════════════
+     SECTION 12 — LOGISTICS, SHIPPING & LIFE SETUP
+══════════════════════════════════════════════════════════════════════════════════════ -->
+<div class="guide-section" id="logistics">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-num">12</div>
+      <div>
+        <h2>Logistics, Shipping, Customs &amp; Life Setup in India</h2>
+        <p>The practical side of uprooting a life. Details matter enormously here.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📦</span> What to Ship vs. What to Buy in India</h3>
+      <table>
+        <tr><th>Item</th><th>Ship from US?</th><th>Reason</th></tr>
+        <tr><td>Laptops, tablets</td><td>Yes — carry-on</td><td>Higher quality, trusted devices</td></tr>
+        <tr><td>High-end camera gear</td><td>Yes</td><td>Much cheaper in US</td></tr>
+        <tr><td>Clothing &amp; shoes</td><td>Selective</td><td>Large US sizes hard to find in India</td></tr>
+        <tr><td>Books (few favorites)</td><td>Selective</td><td>Heavy; Amazon India has wide selection</td></tr>
+        <tr><td>Kitchen appliances (110V)</td><td>No</td><td>India is 220V — risk of damage or need converter</td></tr>
+        <tr><td>Refrigerator, washer, TV</td><td>No</td><td>Not worth shipping cost; buy new in India</td></tr>
+        <tr><td>Furniture</td><td>No</td><td>Rarely worth it; Indian furniture is good and affordable</td></tr>
+        <tr><td>Car</td><td>No</td><td>Import duty 100–200% + left-hand drive issues</td></tr>
+        <tr><td>Medications (3-6 mo supply)</td><td>Yes — checked bag</td><td>Availability and brand equivalents uncertain</td></tr>
+        <tr><td>Children's toys &amp; sentimental items</td><td>Yes</td><td>Emotional value; fit in sea freight</td></tr>
+        <tr><td>Power tools</td><td>No</td><td>Voltage incompatibility; available in India</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🚢</span> International Movers &amp; Customs</h3>
+      <ul class="checklist">
+        <li>Air freight: 2–4 weeks, expensive (~$8–15/kg), good for urgent items under 100kg</li>
+        <li>Sea freight (FCL/LCL): 6–10 weeks, cost-effective for large volumes</li>
+        <li>Get quotes from: Allied International, Crown Relocations, SIRVA, Arpin, Schenker</li>
+        <li>Transfer of Residence (TR) scheme: returning NRIs get duty-free import of used personal effects — must be NRI for 2+ years and items must be owned/used abroad for 12+ months</li>
+        <li>TR eligibility: apply at Indian customs at port of entry; submit passport copies, employment proof abroad</li>
+        <li>Items typically exempt under TR: personal clothes, household items, non-commercial electronics, car (see below)</li>
+        <li>Restricted items: gold &gt;1kg needs to be declared and duty paid; certain electronics have limits</li>
+        <li>Hire a licensed customs agent (CHA) in India port city — they navigate customs efficiently</li>
+        <li>Pack an inventory list with approximate USD values for all shipped items</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🚗</span> Vehicle in India</h3>
+      <ul class="checklist">
+        <li>Buy a car in India — don't import. Import duty (100–200%) makes it uneconomical</li>
+        <li>Popular reliable options: Maruti Swift/Baleno, Honda City, Hyundai Creta, Tata Nexon EV</li>
+        <li>EV infrastructure growing fast in metros — consider if you're in Bengaluru, Delhi, Mumbai</li>
+        <li>Hire a driver: ₹15,000–₹25,000/month; strongly recommended for first year until you're comfortable with traffic</li>
+        <li>Indian traffic is left-hand drive — significant adjustment coming from US</li>
+        <li>Auto insurance: mandatory; get comprehensive from day one</li>
+        <li>Ola/Uber: reliable in metros; reduces need for personal vehicle in city</li>
+        <li>If buying used: verify PUC certificate, no hypothecation, check VAHAN portal for RC details</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📱</span> Technology &amp; Connectivity</h3>
+      <ul class="checklist">
+        <li>SIM card: Airtel or Jio postpaid are best for returning NRIs. Get the SIM before or on arrival</li>
+        <li>Jio's 5G coverage is expanding fastest; Airtel better in premium areas</li>
+        <li>Port your US number to Google Voice ($20 one-time) to keep a US number active for 2FA and US services</li>
+        <li>Home broadband: Airtel Xstream Fiber or JioFiber — get fiber, not cable</li>
+        <li>VPN: have one installed (ExpressVPN, NordVPN) — useful for accessing US content, geo-restricted US services</li>
+        <li>US Apple ID / Google Account: keep it active to maintain access to apps purchased on US store</li>
+        <li>Power protection: buy a UPS/inverter for home — power cuts still occur outside major metros</li>
+        <li>Power adapters: Type D/M (India) — buy universal power strips with surge protection</li>
+        <li>Voltage converter: if bringing 110V US appliances (hair dryer, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🏠</span> Setting Up Home in India</h3>
+      <ul class="checklist">
+        <li>Rent first for 12–18 months before buying — learn the city, neighborhoods, commute patterns</li>
+        <li>Typical rent: Bengaluru/Pune 2BHK ₹25,000–₹60,000/month depending on area</li>
+        <li>Rental agreement: typically 11-month leave &amp; license; register if over 12 months</li>
+        <li>Security deposit: usually 2–3 months rent (negotiable)</li>
+        <li>Society/apartment maintenance: ₹2,000–₹8,000/month; covers security, common areas, gym</li>
+        <li>Set up domestic help: maid (₹3,000–₹8,000/month), cook (₹5,000–₹15,000), driver (₹15,000–₹25,000)</li>
+        <li>Set up water purifier (RO+UV — Kent, Aquaguard) immediately</li>
+        <li>Air purifier: essential in Delhi NCR; recommended in Bengaluru, Mumbai</li>
+        <li>Generator/UPS: negotiate with landlord or install your own for inverter</li>
+        <li>Gas connection: Piped Natural Gas (PNG) in most major cities is clean and convenient</li>
+        <li>Annual AMC (maintenance contract) for AC, RO, inverter — worth it</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🛒</span> Day-to-Day India Life Setup</h3>
+      <ul class="checklist">
+        <li>Grocery: BigBasket, Blinkit, Zepto for online; local vegetable market for freshness</li>
+        <li>Pharmacy: Apollo Pharmacy, MedPlus, 1mg for online delivery</li>
+        <li>Food delivery: Swiggy, Zomato — excellent and inexpensive</li>
+        <li>Entertainment: JioCinema, Hotstar/Disney+, Netflix India, Amazon Prime India</li>
+        <li>Banking apps: set up mobile banking, UPI via Google Pay, PhonePe, or Paytm</li>
+        <li>Cab: Ola, Uber, Rapido (2-wheeler) are all available</li>
+        <li>Travel: IRCTC account for train bookings; MakeMyTrip/Ixigo for flights</li>
+        <li>WhatsApp: primary communication tool in India — families, services, everything</li>
+        <li>Invest in a good air quality monitor (AQI app + physical sensor: Dylos, IQAir AirVisual)</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">📋</span> Government Registrations Post-Arrival</h3>
+      <ul class="checklist">
+        <li>Aadhaar: update address (online via uidai.gov.in) or enroll fresh if you never had one</li>
+        <li>PAN: update residential status from NRI to Resident in ITD portal</li>
+        <li>Voter ID: register after 6 months at your address (not required but good citizenship)</li>
+        <li>Driving license: apply at RTO for fresh India DL; international DL valid for 1 year</li>
+        <li>Vehicle RC transfer: if inheriting a family vehicle, transfer RC to your name at local RTO</li>
+        <li>Passport: renew Indian passport if expiring (can do in India at Passport Seva Kendra)</li>
+        <li>Income Tax Portal: create e-filing account at incometax.gov.in; link PAN with Aadhaar</li>
+        <li>DigiLocker: set up for digital document storage (Aadhaar, PAN, RC, DL all available digitally)</li>
+      </ul>
+    </div>
+
+    <!-- ──── Mental Health & Adjustment ──── -->
+    <div class="section-header" style="margin-top:48px;">
+      <div class="section-num">+</div>
+      <div>
+        <h2>The Emotional &amp; Psychological Transition</h2>
+        <p>Often the most underestimated challenge — plan for it the same way you plan finances.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3><span class="icon">🧠</span> Mental Health &amp; Adjustment</h3>
+      <ul class="checklist">
+        <li>Reverse culture shock is real — allow 6–12 months for full adjustment</li>
+        <li>Set realistic expectations: India's chaos, bureaucracy, and noise are very different from suburban US</li>
+        <li>Build your social network proactively — join returnee groups, alumni clubs, hobby groups</li>
+        <li>Facebook groups like "Returning NRIs" and "NRI Return to India" are invaluable communities</li>
+        <li>Exercise, meditation, and routine are critical anchors during transition</li>
+        <li>Plan "reverse homesickness" — schedule a US trip in year 1 if needed for mental health</li>
+        <li>Be patient with parents — their lifestyle expectations may differ significantly</li>
+        <li>Children's adjustment: monitor for signs of social withdrawal, bullying, academic stress</li>
+        <li>Therapy: online therapy (Wysa, YourDOST, BetterHelp India) available; no stigma in seeking help</li>
+        <li>Celebrate the wins: food, family, cost of living, warmth, culture — these are real and daily</li>
+      </ul>
+    </div>
+
+    <!-- ──── Quick Reference Summary ──── -->
+    <div style="margin-top:48px;">
+      <div class="section-header">
+        <div class="section-num">✓</div>
+        <div>
+          <h2>Master Action Timeline — At a Glance</h2>
+        </div>
+      </div>
+
+      <table>
+        <tr><th>When</th><th>Action</th><th>Priority</th></tr>
+        <tr><td>24 months out</td><td>Decide return date, city, housing strategy; hire US CPA + India CA</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>18 months out</td><td>Understand RNOR window; plan US asset liquidation sequence</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>12 months out</td><td>Apply for OCI (if not done); get Reentry Permit (GC holders); school research</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>12 months out</td><td>Begin India job search; open India demat + mutual fund account</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>9 months out</td><td>List US home (if selling); plan 401(k) rollover/conversion strategy</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>6 months out</td><td>Book international movers; begin decluttering; fill prescription supplies</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>6 months out</td><td>Update India banking accounts; open RFC account</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>3 months out</td><td>File USPS forwarding; notify IRS (Form 8822); transfer US phone to Google Voice</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>1 month out</td><td>Cancel US subscriptions; transfer or sell vehicle; confirm flights; apostille documents</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>Move day</td><td>Carry original documents; ₹10K cash; US dollars; medications; hard drives</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>Week 1 in India</td><td>Get India SIM; set up UPI; open resident bank account; buy health insurance</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>Month 1 in India</td><td>Update Aadhaar address; PAN resident status; find a GP/doctor; apply for DL</td><td><span class="badge orange">Important</span></td></tr>
+        <tr><td>Month 3 in India</td><td>File FBAR (if accounts opened); consult CA for India ITR planning</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>By April 15 (US)</td><td>File US tax return for departure year; file FBAR by April 15 (auto-extended to Oct 15)</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>By July 31 (India)</td><td>File India ITR for the financial year in which you became tax resident</td><td><span class="badge green">Critical</span></td></tr>
+        <tr><td>Year 2</td><td>Reassess Roth conversion strategy; evaluate India real estate purchase; review US holdings</td><td><span class="badge blue">Plan</span></td></tr>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════ FOOTER ═══════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <p><strong>Important Disclaimer</strong></p>
+    <p style="margin-top:8px;">This guide is for informational purposes only and does not constitute tax, legal, or financial advice. Tax laws in both the US and India change frequently. Always consult a qualified US CPA with expatriate expertise and a qualified Indian Chartered Accountant for advice specific to your situation. Rules around FBAR, FATCA, Green Card abandonment, and RNOR status can have significant financial consequences — professional guidance is not optional.</p>
+    <p style="margin-top:16px; color: #6a8aaa;">Last updated: June 2026 &nbsp;|&nbsp; Covers US→India relocation for NRIs</p>
+  </div>
+</footer>
+
+</body>
+</html>
