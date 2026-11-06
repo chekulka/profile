@@ -3,6 +3,10 @@
 **Goal:** be ready for roles like *Data Scientist, Core Experimentation* (OpenAI), and become expert in the `diff-diff` library.
 **Pace:** about 90 minutes on weekdays plus a 2–3 hour weekend project. Each day folder has `lesson.md`, `homework.py` and your `answers.md`.
 
+- [`diff-diff-map.md`](diff-diff-map.md): every diff-diff estimator and tool, mapped to the day it's taught
+- [`interview-prep.md`](interview-prep.md): question bank, coding drills, system design, STAR stories
+- New lessons arrive each weekday at 7am Central. Commit your answers and they get reviewed the next morning.
+
 | Job requirement | Where it's covered |
 |---|---|
 | Statistics, causal inference, online experimentation | Weeks 1–2, 5–8 |
