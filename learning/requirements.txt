@@ -1,0 +1,6 @@
+diff-diff>=4.0
+numpy
+pandas
+scipy
+statsmodels
+matplotlib
