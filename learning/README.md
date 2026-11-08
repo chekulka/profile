@@ -5,7 +5,13 @@
 
 - [`diff-diff-map.md`](diff-diff-map.md): every diff-diff estimator and tool, mapped to the day it's taught
 - [`interview-prep.md`](interview-prep.md): question bank, coding drills, system design, STAR stories
-- New lessons arrive each weekday at 7am Central. Commit your answers and they get reviewed the next morning.
+- [`resources.md`](resources.md): curated videos, PDFs and tutorials
+- **A new lesson arrives every day at 7am Central.** Weekdays follow the syllabus below; Saturday is the weekend project and Sunday is a weekly review quiz.
+- Each day folder contains:
+  - `lesson.md`: concepts, plus the videos, PDFs and tutorials to study (with exact chapters and timestamps where possible)
+  - `homework.py`: hands-on coding with self-checks
+  - `quiz.md`: 10 questions with hidden answers and explanations; pass mark 8/10
+  - `answers.md` (you write this): homework answers + your quiz score. Committing it gets you feedback the next morning.
 
 | Job requirement | Where it's covered |
 |---|---|

@@ -22,9 +22,12 @@
 pip install -r learning/requirements.txt
 python learning/day01/homework.py
 ```
-Complete every `TODO` in `homework.py` and write answers to Q6–Q9 in `learning/day01/answers.md`. Commit when you're done, and I'll review it at the next lesson.
+Complete every `TODO` in `homework.py` and write answers to Q6–Q9 in `learning/day01/answers.md`.
 
-## 4. Check yourself
+## 4. Quiz
+Take [`quiz.md`](quiz.md) (10 questions, answers hidden, pass mark 8/10) and record your score in `answers.md`. Commit when you're done, and I'll review it at the next lesson.
+
+## 5. Check yourself
 - [ ] I can explain why the "naive post-only difference" is biased in Part 1.
 - [ ] My hand-computed DiD matches diff-diff's ATT exactly.
 - [ ] I can state the Card & Krueger result and the parallel-trends assumption in plain English.
