@@ -1,8 +1,10 @@
-# Interview prep: Data Scientist, Core Experimentation
+# Interview prep: target roles
+
+**Targets:** OpenAI (Data Scientist, Core Experimentation) · Discord (Staff Data Scientist, Causal Inference & Experimentation) · Anthropic (Brand Insights, Measurement Lead). Sections 1–6 apply to all three; sections 7–8 are role-specific; section 9 is your readiness checklist.
 
 Typical loop for this kind of role: recruiter screen → technical screen (stats + coding) → onsite with 4–5 rounds: statistics/causal inference, experimentation case, coding (Python/SQL/Spark), experimentation platform system design, and behavioral/leadership.
 
-How to use this file: answer one section out loud every day in week 12, and from week 4 onward answer 3 random questions every Friday. Record yourself, then grade the answer for structure, correctness and clarity.
+How to use this file: answer one section out loud every day in week 14, and from week 4 onward answer 3 random questions every Friday. Record yourself, then grade the answer for structure, correctness and clarity.
 
 ## 1. Statistics and inference
 1. Derive the variance of a difference in means. Why does the CLT matter when revenue is heavily skewed?
@@ -59,9 +61,33 @@ Also practice: *"How would you A/B test a new LLM version when outputs are non-d
 | Disagreed with a stakeholder | (Prepare: a launch you argued against because of the data) |
 | A failure | (Prepare: an experiment that was invalid, e.g. an SRM, and what you changed afterward) |
 
-## 7. Readiness checklist
+## 7. Discord: Staff Data Scientist, Causal Inference & Experimentation
+*What they emphasize: statistically sound experiments, best-practice methods, setting the Experimentation Platform roadmap, causal inference that drives decisions, and publications (a bonus).*
+1. **Network effects:** you test a new voice-channel feature. Users in the same server affect each other. Why is user-level randomization biased, and which way? Compare server-level (cluster) randomization, graph-cluster randomization and ego-network designs, and their power costs.
+2. **Two-sided effects:** a feature changes how *senders* behave, but the value lands on *receivers*. How do you measure both? (Hint: think about which unit you randomize and which unit you measure.)
+3. **Server-level tests:** there are 10,000 eligible servers with very different sizes. How do you analyze them? (Cluster-robust SEs, ratio metrics, the delta method, stratifying by size, CUPED at the server level.)
+4. **Quasi-experiments:** a policy change (e.g. new safety rules) rolled out to all servers in a region on one date. Walk through DiD vs. synthetic control vs. RD on server age or size, and the diagnostics you'd show.
+5. **Platform roadmap (Staff-level):** "You join and find teams peeking, ignoring SRM, and analyzing 40 metrics per test. What do you put on the platform roadmap for the next two quarters, in what order, and how do you get teams to adopt it?" (Prioritize by impact on decision quality: SRM auto-checks, a sequential testing default, guardrails and OEC, CUPED, a metric catalog, readout templates, education.)
+6. **Long-term effects:** engagement features can look good in 2 weeks and hurt retention in 6 months. Discuss holdouts, surrogate indices and long-running holdbacks.
+7. **Teen safety and trust:** how do you run experiments when some outcomes are sensitive (harassment, safety)? Guardrail metrics, ethics review, minimizing exposure, quasi-experimental alternatives.
+8. **Publications:** be ready to discuss your paper (week 14) and the patent: the problem, the method, the evidence, and what you'd do differently.
+
+## 8. Anthropic: Brand Insights, Measurement Lead
+*What they emphasize: whether marketing spend is working, the brand funnel (awareness → consideration → pipeline), executive readouts, brand health trackers and vendors, MMM, MTA and incrementality.*
+1. **"Is our brand spend working?"** Walk the CMO through your measurement framework: triangulating MMM, lift tests and attribution, what each can and can't tell you, and how you resolve disagreements between them.
+2. **Geo-lift:** design an incrementality test for a $5M brand campaign in 10 US metros. Market selection, synthetic control vs. synthetic DiD, test length, power, and the readout.
+3. **MMM:** explain adstock and saturation. Why does MMM need calibration? How do lift-test results become MMM priors (`to_meridian_roi_prior`, `to_pymc_marketing_lift_test`)?
+4. **Attribution:** why is last-touch (and multi-touch) attribution not causal? When is it still useful?
+5. **Brand tracker:** awareness rose 4 points quarter over quarter. Is that real? Discuss sampling error, weighting, panel changes, vendor methodology shifts, and seasonality.
+6. **B2B vs. prosumer:** how does measurement differ for long B2B sales cycles (lagged pipeline effects, small samples) compared with prosumer signups?
+7. **Executive readout:** you have 5 minutes with the CMO and the numbers are mixed. Structure the story: headline, confidence, drivers, recommendation, next test.
+8. **Vendor management:** a survey vendor changed its sampling method mid-year. How do you detect the break and bridge the series?
+
+## 9. Readiness checklist
 - [ ] I can derive CUPED, the delta method and sample size on a whiteboard without notes
 - [ ] I can explain staggered DiD bias and CS/SA in 2 minutes
 - [ ] I've built the capstone toolkit and can demo it
 - [ ] 3 full mock onsites done, each scored ≥ 4/5
 - [ ] 7 STAR stories written and rehearsed
+- [ ] Discord: a 2-quarter platform roadmap I can present in 10 minutes
+- [ ] Anthropic: a mock "Is brand spend working?" executive readout (week 9 weekend)

@@ -25,11 +25,11 @@ Every major class and function in the library, mapped to the day it's taught. "I
 | `TripleDifference` (`DDD`) | Two eligibility criteria | W7D4 | M |
 | `ContinuousDiD`, `HeterogeneousAdoptionDiD` (`HAD`) | Dose-response; no never-treated units | W7D4 | M |
 | `SpilloverDiD` | Effects leaking onto nearby controls | W7D4 | M |
-| `ChangesInChanges` (`CiC`) | Distributional / quantile effects | W8D4 | L |
-| `LWDiD` | Lee-Wooldridge rolling transformation, small-N exact inference | W8D4 | L |
-| `DMLDiD` | Double ML DiD with high-dimensional covariates | W8D4 | M |
-| `DurationDiD` | Binary "spell ended" outcomes (churn timing) | W8D4 | L |
-| `RegressionDiscontinuity` (`RDD`), `RDPlot`, `RDDensityTest` | Thresholds (eligibility cutoffs), manipulation test | W8D1 | H |
+| `ChangesInChanges` (`CiC`) | Distributional / quantile effects | W10D4 | L |
+| `LWDiD` | Lee-Wooldridge rolling transformation, small-N exact inference | W10D4 | L |
+| `DMLDiD` | Double ML DiD with high-dimensional covariates | W10D4 | M |
+| `DurationDiD` | Binary "spell ended" outcomes (churn timing) | W10D4 | L |
+| `RegressionDiscontinuity` (`RDD`), `RDPlot`, `RDDensityTest` | Thresholds (eligibility cutoffs), manipulation test | W10D1 | H |
 
 ## Diagnostics, sensitivity, inference
 | Item | Day | Priority |
@@ -40,7 +40,7 @@ Every major class and function in the library, mapped to the day it's taught. "I
 | `compute_honest_did`, `HonestDiD`, `plot_sensitivity` | W7D1 | H |
 | `compute_pretrends_power`, `PreTrendsPower` | W5D4 | M |
 | Conley spatial HAC SEs (`vcov_type="conley"`) | W7 weekend | L |
-| `SurveyDesign`, `aggregate_survey` | W8 weekend | L |
+| `SurveyDesign`, `aggregate_survey` | W8D1–D2 | M (H for Anthropic) |
 
 ## Design and power
 | Item | Day | Priority |
@@ -54,9 +54,9 @@ Every major class and function in the library, mapped to the day it's taught. "I
 | `generate_*_data`, `load_card_krueger`, `load_mpdta`, `load_prop99`, `load_castle_doctrine`, `load_walmart` | Throughout | — |
 | `validate_did_data`, `balance_panel`, `wide_to_long`, `make_treatment_indicator`, `make_post_indicator`, `create_event_time`, `profile_panel` | W5D1 | M |
 | `plot_event_study`, `plot_group_effects`, `plot_group_time_heatmap`, `plot_bacon`, `plot_synth_weights` | W6 | H (communication) |
-| `BusinessReport`, `DiagnosticReport` | W8D4 | M |
+| `BusinessReport`, `DiagnosticReport` | W10D4 | M |
 | `practitioner_next_steps`, `get_llm_guide("practitioner")`: the 8-step Baker et al. (2025) workflow | W1D1 → W5 weekend | H |
-| `to_pymc_marketing_lift_test`, `to_meridian_roi_prior` (MMM calibration) | W7 weekend | L |
+| `to_pymc_marketing_lift_test`, `to_meridian_roi_prior` (MMM calibration) | W9D3 | M (H for Anthropic) |
 
 ## The 8-step workflow (memorize this for interviews)
 1. Define the target parameter (ATT, ATT(g,t), event-time ATT; weighted or not)
